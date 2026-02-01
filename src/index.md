@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: TCP
-      link: /webNet
+      link: /src/webNet
     - theme: alt
       text: NODE
-      link: /nodejs
+      link: /src/nodejs
 
 features:
   - title: 生活日记
