@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   srcDir: "src",
   outDir: "docs",//打包放入的文件夹，默认是dist，这里改成了docs并且放在根目录下
+  base:"/docs/",//加上仓库前缀
   title: "My Awesome Project",
   description: "mark",
   themeConfig: {

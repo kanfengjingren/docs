@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as s}from"./chunks/framework.CR5tBAx8.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"nodejs/fs.md","filePath":"nodejs/fs.md"}'),a={name:"nodejs/fs.md"};function o(n,r,c,d,f,p){return t(),s("div")}const m=e(a,[["render",o]]);export{i as __pageData,m as default};
