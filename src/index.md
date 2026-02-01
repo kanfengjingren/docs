@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: TCP
-      link: /webNet/websocket
+      link: /webNet/tcp
     - theme: alt
       text: NODE-fs
       link: nodejs
