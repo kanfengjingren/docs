@@ -8,11 +8,11 @@ hero:
   tagline: 看风景人的博客
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: TCP
+      link: /webNet
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: NODE
+      link: /nodejs
 
 features:
   - title: 生活日记

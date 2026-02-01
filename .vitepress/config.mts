@@ -19,7 +19,8 @@ export default defineConfig({
         text: 'webNet',
         items: [
           { text: 'websocket', link: '/webNet/websocket' },
-          { text: 'tcp', link: '/webNet/tcp' }
+          { text: 'tcp', link: '/webNet/tcp' },
+          { text: '浏览器流程', link: '/webNet/浏览器流程' }
           
         ]
       },
@@ -34,7 +35,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/kanfengjingren' }
     ]
   }
 })
