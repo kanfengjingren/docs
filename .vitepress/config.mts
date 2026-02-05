@@ -20,7 +20,8 @@ export default defineConfig({
         items: [
           { text: 'websocket', link: '/webNet/websocket' },
           { text: 'tcp', link: '/webNet/tcp' },
-          { text: '浏览器流程', link: '/webNet/浏览器流程' }
+          { text: '浏览器流程', link: '/webNet/浏览器流程' },
+          { text: 'SSE', link: '/webNet/SSE' },
           
         ]
       },
