@@ -32,6 +32,13 @@ export default defineConfig({
           { text: 'fs', link: '/nodejs/fs' },
           
         ]
+      },
+      {
+        text: '前端工程化',
+        items: [
+          { text: 'webpack', link: '/前端工程化/webpack' },
+          
+        ]
       }
     ],
 
