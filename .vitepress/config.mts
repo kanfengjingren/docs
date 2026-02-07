@@ -43,7 +43,8 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/kanfengjingren' }
+      { icon: 'github', link: 'https://github.com/kanfengjingren' },
+      { icon: 'bilibili', link: 'https://space.bilibili.com/524473823?spm_id_from=333.1007.0.0' },
     ]
   }
 })
