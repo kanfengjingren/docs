@@ -104,4 +104,95 @@ plugins: [
 结构应该是这样的：
 ![](../../resource/文件哈希命名.png)
 
+# 开发环境
+进行一些设置，让我们的开发更轻松
 
+## 使用 source map
+当 webpack 打包源代码时，可能会很难追踪到错误和警告在源代码中的原始位置。例如，如果将三个源文件（a.js，b.js 和 c.js）打包到一个 bundle（bundle.js）中，而其中一个源文件包含错误，那么堆栈跟踪就会直接指向到 bundle.js，却无法准确知道错误来自于哪个源文件，所以这种提示通常无法提供太多帮助。
+
+在webpack配置中加入`devtool:'inline-source-map',`，故意在文件中提供一个错误，再次打包，就能看到错误中指出了准确的信息
+![](../../resource/sourcemap指向错误.png)
+
+## 使用开发工具
+现在每次更让新文件都需要我们手动打包，可以使用一些开发工具来自动打包和启动服务
+webpack 提供了几种可选方式帮助在代码发生变化后自动编译代码：
+
+* webpack 的 观察模式
+* webpack-dev-server
+* webpack-dev-middleware
+
+### webpack的观察模式
+配置命令运行后可以根据你的改动实时修改打包，但是网页上需要刷新
+在package.json的 **"scripts"** 中添加命令：`"watch": "webpack --watch",`;运行`npm run watch`。可以看到运行完毕后没有结束，如果此时更改代码，会自动打包更新
+
+### webpack-dev-server
+webpack的观察模式还是需要手动刷新网页，而现在使用**webpack-dev-server**,自动重新加载
+
+1.安装依赖
+```
+npm install --save-dev webpack-dev-server
+```
+2.在配置文件中配置
+```
+    devServer: {
+        static: './dist',
+  },
+    optimization: {
+        runtimeChunk: 'single',
+  },
+```
+以上配置告知 webpack-dev-server 将 dist 目录下的文件作为可访问资源部署在 localhost:8080。。
+3.添加一个可以直接运行 dev server 的 script：
+```
+"start": "webpack serve --open",
+```
+
+运行后就能看到结果
+* 这种部署方式是将所有静态资源部署到这个地址上，我们可以使用 `http://[devServer.host]:[devServer.port]/[output.publicPath]/[output.filename]` 进行访问静态资源。由于现在还没有设置publicPath,所以publicPath默认为'/'
+
+例如这里访问一下图片资源：
+![](../../resource/server静态资源.png)
+
+### webpack-dev-middleware
+webpack-dev-middleware 是一个包装器，它可以把 webpack 处理过的文件发送到 server。这是 webpack-dev-server 内部的原理，但是它也可以作为一个单独的包使用，以便根据需求进行更多自定义设置。下面是一个 webpack-dev-middleware 配合 express server 的示例。
+
+1.安装webpack-dev-middleware和express
+```
+npm install --save-dev express webpack-dev-middleware
+```
+2.在output中配置publicPath
+```
+output: {
+        filename: "[name][contenthash].bundle.js",
+        path: path.resolve(__dirname, "dist"),
+        clean: true,
+        publicPath:'/'
+    },
+```
+3.配置好服务器
+创建server.js后
+```
+const express = require('express');
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+
+const app = express();
+const config = require('./webpack.config.js');
+const compiler = webpack(config);
+
+// 告知 express 使用 webpack-dev-middleware，
+// 以及将 webpack.config.js 配置文件作为基础配置。
+app.use(
+  webpackDevMiddleware(compiler, {
+    publicPath: config.output.publicPath,
+  })
+);
+
+// 将文件 serve 到 port 3000。
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!\n');
+});
+```
+
+
+运行之后，可以看到已经在3000端口了，同时能访问静态资源
