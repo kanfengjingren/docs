@@ -62,6 +62,9 @@ module:{
 **rules**配置下，**test**用来匹配所有符合名称的文件，**use**里包含着需要使用到的加载器
 
 再次打包，成功
+* module loader 可以链式调用。链中的每个 loader 都将对资源进行转换，不过链会逆序执行。第一个 loader 将其结果（被转换后的资源）传递给下一个 loader，依此类推。最后，webpack 期望链中的最后的 loader 返回 JavaScript。
+
+请确保 loader 的先后顺序：'style-loader' 在前，而 'css-loader' 在后。如果不遵守此约定，webpack 可能会抛出错误。
 
 ## 为图片资源进行配置
 在src下创建assets/image文件并导入图片。同时也需要将图片用导入的方式导入到index.js中
@@ -75,4 +78,30 @@ module:{
 再次打包，打开网页，图片资源正确加载了！
 ![](../../resource/图片配置完成.png)
 
-## 在webpack中使用插件
+## 在webpack中使用插件并且配置
+现在我们还是使用src里面的html，但是我们也能借助webpack提供的插件来将html打包，现在我来演示一遍
+安装插件：`npm install --save-dev html-webpack-plugin`
+接着在webpack配置文件中配置插件：
+1.首先导入插件`const HtmlWebpackPlugin = require('html-webpack-plugin');`
+2.plugins是一个数组，你可以在里面配置插件
+```
+plugins: [
+    new HtmlWebpackPlugin({
+      title: '管理输出',
+    }),
+  ],
+```
+3.再次打包，可以看到*dist*文件夹下多出了**index.html**，webpack帮我们打包好了，而且title是管理输出
+
+## 文件的命名
+现在我们打包后的文件，修改前和修改后都是一个名称，这样可能有一个问题。一个文件，上传给浏览器之后，我修改再打包后上传给浏览器，浏览器可能认为是同一个文件没有修改，转而去使用缓存中的上一个资源。为了解决我们可以动态的解决这个问题。
+---
+对输出进行一些修改，将output里的文件名改成这样：`filename: "[name][contenthash].bundle.js"`
+打包后应该能看到新的文件
+![](../../resource/hash的改变.png)
+这里我们看到，对一个index.js文件进行修改，两次打包后的hash值是不同的。旧的那一版不要可以删除，同时在output里面有着指令可以自动清除
+在output中加入指令：`clean:true`
+结构应该是这样的：
+![](../../resource/文件哈希命名.png)
+
+
