@@ -30,7 +30,7 @@ export default defineConfig({
         text: 'nodejs',
         items: [
           { text: 'fs', link: '/nodejs/fs' },
-          { text: 'nodejs基础', link: '/nodejs/nodejs基础' },
+          { text: 'nodejs基础', link: '/nodejs/node基础' },
           
         ]
       },
