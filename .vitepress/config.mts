@@ -11,7 +11,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '主页', link: '/' },
-      { text: 'websocket', link: '/前端工程化/webpack' }
+      { text: 'webpack', link: '/前端工程化/webpack' }
     ],
 
     sidebar: [
