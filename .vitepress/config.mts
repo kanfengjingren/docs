@@ -31,6 +31,8 @@ export default defineConfig({
         items: [
           { text: 'fs', link: '/nodejs/fs' },
           { text: 'nodejs基础', link: '/nodejs/node基础' },
+          { text: 'os', link: '/nodejs/os' },
+          { text: 'process', link: '/nodejs/process' },
           
         ]
       },
@@ -38,6 +40,13 @@ export default defineConfig({
         text: '前端工程化',
         items: [
           { text: 'webpack', link: '/前端工程化/webpack' },
+          
+        ]
+      },
+      {
+        text: '服务器',
+        items: [
+          { text: '个人电脑作为局域网服务器', link: '/服务器/个人电脑作为局域网服务器' },
           
         ]
       }

@@ -6,17 +6,18 @@ console.log(os.type());//Windows_NT
 
 
 
-console.log(os.platform());//win32
+1. console.log(os.platform());//win32
 平台
-console.log(os.release());//10.0.22631
+
+2. console.log(os.release());//10.0.22631
 系统版本
-console.log(os.homedir());//C:\Users\34410
+3. console.log(os.homedir());//C:\Users\34410
 你的系统目录
-console.log(os.arch());//x64
+4. console.log(os.arch());//x64
 架构
-console.log(os.cpus());
+5. console.log(os.cpus());
 cpu的信息
-console.log(os.networkInterfaces());
+6. console.log(os.networkInterfaces());
 你的网络信息
 
 
