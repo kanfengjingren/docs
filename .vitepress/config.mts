@@ -33,6 +33,7 @@ export default defineConfig({
           { text: 'nodejs基础', link: '/nodejs/node基础' },
           { text: 'os', link: '/nodejs/os' },
           { text: 'process', link: '/nodejs/process' },
+          { text: '响应头和请求头', link: '/nodejs/响应头和请求头' },
           
         ]
       },
