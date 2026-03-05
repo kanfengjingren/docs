@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as o}from"./chunks/framework.C6muwfU7.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"nodejs/项目架构(MVC+IoC+装饰器).md","filePath":"nodejs/项目架构(MVC+IoC+装饰器).md"}'),_={name:"nodejs/项目架构(MVC+IoC+装饰器).md"};function a(s,n,r,c,d,p){return t(),o("div")}const f=e(_,[["render",a]]);export{m as __pageData,f as default};
