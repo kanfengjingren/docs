@@ -36,6 +36,7 @@ export default defineConfig({
           { text: 'path', link: '/nodejs/path' },
           { text: '响应头和请求头', link: '/nodejs/响应头和请求头' },
           { text: '数据库', link: '/nodejs/数据库' },
+          { text: 'Prisma+项目架构MVC,IoC,DI+JWT', link: '/nodejs/Prisma+项目架构MVC,IoC,DI+JWT' },
           
         ]
       },
