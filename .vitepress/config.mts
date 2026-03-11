@@ -36,7 +36,8 @@ export default defineConfig({
           { text: 'path', link: '/nodejs/path' },
           { text: '响应头和请求头', link: '/nodejs/响应头和请求头' },
           { text: '数据库', link: '/nodejs/数据库' },
-          { text: 'Prisma+项目架构MVC,IoC,DI+JWT', link: '/nodejs/Prisma+项目架构MVC,IoC,DI+JWT' },
+          { text: 'Prisma和项目架构MVC,IoC,DI和JWT', link: '/nodejs/Prisma和项目架构MVC,IoC,DI和JWT' },
+          { text: 'lua', link: '/nodejs/lua' },
           
         ]
       },
@@ -53,7 +54,14 @@ export default defineConfig({
           { text: '个人电脑作为局域网服务器', link: '/服务器/个人电脑作为局域网服务器' },
           
         ]
-      }
+      },
+      {
+        text: 'openclaw',
+        items: [
+          { text: 'openclaw', link: '/openclaw/openclaw' },
+          
+        ]
+      },
     ],
 
     socialLinks: [

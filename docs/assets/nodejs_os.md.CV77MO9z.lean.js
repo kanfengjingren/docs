@@ -1,1 +1,0 @@
-import{_ as e,o as s,c as l,ah as n}from"./chunks/framework.C6muwfU7.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"nodejs/os.md","filePath":"nodejs/os.md"}'),r={name:"nodejs/os.md"};function t(p,o,a,i,c,_){return s(),l("div",null,[...o[0]||(o[0]=[n("",3)])])}const m=e(r,[["render",t]]);export{f as __pageData,m as default};
