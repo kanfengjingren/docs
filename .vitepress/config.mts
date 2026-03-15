@@ -38,6 +38,7 @@ export default defineConfig({
           { text: '数据库', link: '/nodejs/数据库' },
           { text: 'prisma', link: '/nodejs/prisma' },
           { text: 'lua', link: '/nodejs/lua' },
+          { text: 'JWT', link: '/nodejs/JWT' },
           
         ]
       },
