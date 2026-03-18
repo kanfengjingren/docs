@@ -39,6 +39,7 @@ export default defineConfig({
           { text: 'prisma', link: '/nodejs/prisma' },
           { text: 'lua', link: '/nodejs/lua' },
           { text: 'JWT', link: '/nodejs/JWT' },
+          { text: '爬虫', link: '/nodejs/爬虫' },
           
         ]
       },
