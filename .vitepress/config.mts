@@ -68,6 +68,7 @@ export default defineConfig({
         text: 'NESTJS',
         items: [
           { text: 'NESTjs', link: '/nestjs/nestjs' },
+          { text: 'middleware', link: '/nestjs/middleware' },
           
         ]
       },
