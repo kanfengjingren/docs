@@ -64,6 +64,13 @@ export default defineConfig({
           
         ]
       },
+      {
+        text: 'NESTJS',
+        items: [
+          { text: 'NESTjs', link: '/nestjs/nestjs' },
+          
+        ]
+      },
     ],
 
     socialLinks: [
