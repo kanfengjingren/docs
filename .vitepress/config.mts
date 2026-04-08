@@ -69,6 +69,7 @@ export default defineConfig({
         items: [
           { text: 'NESTjs', link: '/nestjs/nestjs' },
           { text: 'middleware', link: '/nestjs/middleware' },
+          { text: 'nestjs+prisma+redis+nodemailer+JWT', link: '/nestjs/nestjs+prisma+redis+nodemailer+JWT' },
           
         ]
       },
