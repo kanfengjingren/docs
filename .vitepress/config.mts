@@ -83,6 +83,7 @@ export default defineConfig({
         text: 'Vue',
         items: [
           { text: '入门和认识目录', link: '/Vue/入门和认识目录' },
+          { text: 'Vue模板语法和指令', link: '/Vue/Vue模板语法和指令' },
         ]
       }
     ],
