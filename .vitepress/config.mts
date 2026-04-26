@@ -78,6 +78,12 @@ export default defineConfig({
         items: [
           { text: '学到今天的一个总结', link: '/一点思考/学到今天的一个总结' },
         ]
+      },
+      {
+        text: 'Vue',
+        items: [
+          { text: '入门和认识目录', link: '/Vue/入门和认识目录' },
+        ]
       }
     ],
 
