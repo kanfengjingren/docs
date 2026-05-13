@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   srcDir: "src",
   outDir: "docs",//打包放入的文件夹，默认是dist，这里改成了docs并且放在根目录下
-  base:"/docs/",//加上仓库前缀
+  base: "/docs/",//加上仓库前缀
   title: "看风景人的博客",
   description: "mark",
   themeConfig: {
@@ -22,10 +22,10 @@ export default defineConfig({
           { text: 'tcp', link: '/webNet/tcp' },
           { text: '浏览器流程', link: '/webNet/浏览器流程' },
           { text: 'SSE', link: '/webNet/SSE' },
-          
+
         ]
       },
-      
+
       {
         text: 'nodejs',
         items: [
@@ -40,28 +40,28 @@ export default defineConfig({
           { text: 'lua', link: '/nodejs/lua' },
           { text: 'JWT', link: '/nodejs/JWT' },
           { text: '爬虫', link: '/nodejs/爬虫' },
-          
+
         ]
       },
       {
         text: '前端工程化',
         items: [
           { text: 'webpack', link: '/前端工程化/webpack' },
-          
+
         ]
       },
       {
         text: '服务器',
         items: [
           { text: '个人电脑作为局域网服务器', link: '/服务器/个人电脑作为局域网服务器' },
-          
+
         ]
       },
       {
         text: 'openclaw',
         items: [
           { text: 'openclaw', link: '/openclaw/openclaw' },
-          
+
         ]
       },
       {
@@ -70,7 +70,7 @@ export default defineConfig({
           { text: 'NESTjs', link: '/nestjs/nestjs' },
           { text: 'middleware', link: '/nestjs/middleware' },
           { text: 'nestjs+prisma+redis+nodemailer+JWT', link: '/nestjs/nestjs+prisma+redis+nodemailer+JWT' },
-          
+
         ]
       },
       {
@@ -84,7 +84,13 @@ export default defineConfig({
         items: [
           { text: '入门和认识目录', link: '/Vue/入门和认识目录' },
           { text: 'Vue模板语法和指令', link: '/Vue/Vue模板语法和指令' },
-          { text: '响应式', link: '/Vue/响应式' },
+          { text: '组件间传递参数', link: '/Vue/组件间传递参数' },
+          { text: 'watch和computed', link: '/Vue/watch和computed' },
+        ]
+      }, {
+        text: 'langchain',
+        items: [
+          { text: 'langchain入门', link: '/langchain/langchain入门' }
         ]
       }
     ],
