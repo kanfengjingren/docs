@@ -77,6 +77,7 @@ export default defineConfig({
         text: '一点思考',
         items: [
           { text: '学到今天的一个总结', link: '/一点思考/学到今天的一个总结' },
+          { text: '数据处理', link: '/一点思考/数据处理' },
         ]
       },
       {
