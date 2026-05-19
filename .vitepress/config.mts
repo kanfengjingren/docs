@@ -86,7 +86,7 @@ export default defineConfig({
           { text: '入门和认识目录', link: '/Vue/入门和认识目录' },
           { text: 'Vue模板语法和指令', link: '/Vue/Vue模板语法和指令' },
           { text: '组件间传递参数', link: '/Vue/组件间传递参数' },
-          { text: 'watch和computed', link: '/Vue/watch和computed' },
+          { text: '侦听器', link: '/Vue/侦听器' },
           { text: 'pinia', link: '/Vue/pinia' },
           { text: '路由', link: '/Vue/路由' },
         ]
