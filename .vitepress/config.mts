@@ -89,6 +89,7 @@ export default defineConfig({
           { text: '侦听器', link: '/Vue/侦听器' },
           { text: 'pinia', link: '/Vue/pinia' },
           { text: '路由', link: '/Vue/路由' },
+          { text: '模板引用', link: '/Vue/模板引用' },
         ]
       }, {
         text: 'langchain',

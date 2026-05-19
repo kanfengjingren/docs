@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./chunks/framework.BIONGpTb.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Vue/pinia.md","filePath":"Vue/pinia.md"}'),n={name:"Vue/pinia.md"};function i(r,o,s,c,p,_){return t(),a("div")}const f=e(n,[["render",i]]);export{m as __pageData,f as default};
