@@ -59,7 +59,8 @@ console.log(main.list);
 
 ![](../../resource/store获取属性.png)
 
-修改state属性的值：新增一个count计数属性
+## 修改state属性的值：新增一个count计数属性
+
 1. 直接修改 
 ```ts
 <template>
@@ -218,3 +219,123 @@ console.log(main.getName);
 
 而且这个也是响应式的，点击change，会发现这个也是改变了的
 
+## pinia里面其他的方法
+已经有了$patch和$state,下面还有几个api
+
+1. $reset:就是把pinia的状态修改为初始状态
+2. $subscribe,监听state里面属性的变化。接收两个参数：一个回调函数、一个对象
+
+```ts
+main.$subscribe((args,state)=>{
+  console.log(args);  //这是watcheffect那种东西
+  console.log(state); //state实例
+  
+  
+  console.log("改变了store里面的东西");
+  
+},{
+  detached:true, //组件销毁后也执行
+  deep:true,     //深度监听
+  flush:"post"   //监听的时机
+})
+```
+
+3. $onAction:监听action里面的方法有没有被调用的，接收回调函数和一个boolean值。boolean值控制的就是detached
+
+```ts
+main.$onAction((args)=>{
+  console.log(args); //args就是传进来的参数
+  
+  console.log("调用了actions里面的方法");
+  
+},true)
+```
+
+
+## 写一个pinia持久化插件
+
+其实思路很简单，就是监听里面数据的更改，更新了就存到缓存里面，不过有点小问题
+```ts
+import { createApp, toRaw } from 'vue'
+
+import App from './App.vue'
+import { createPinia } from 'pinia'
+import type { PiniaPluginContext } from 'pinia'
+
+const store = createPinia();
+
+const setLocalStorage = (key: string, value: any) => {
+    localStorage.setItem(key, JSON.stringify(value))
+}
+const getLocalStorage = (key: string) => {
+    return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key) as string) : {}
+}
+const piniaPlugin = (context: PiniaPluginContext) => {
+    const { store } = context
+    const data = getLocalStorage(`${store.$id}-pinia`)   //我还以为要同步更新
+    store.$subscribe(() => {
+        setLocalStorage(`${store.$id}-pinia`, toRaw(store.$state))
+    })
+    return {
+        ...data  //不过确实问的好，这个为啥直接返回给了store的$state
+    }
+
+}
+store.use(piniaPlugin)
+
+createApp(App).use(store).mount('#app')
+
+```
+
+
+
+也可以这样，自定义一些参数和键名：用到了什么函数的柯里化
+
+
+```ts
+import { createApp, toRaw } from 'vue'
+
+import App from './App.vue'
+import { createPinia } from 'pinia'
+import type { PiniaPluginContext } from 'pinia'
+
+type Options = {
+    key:string
+}
+
+const store = createPinia();
+
+const setLocalStorage = (key: string, value: any) => {
+    localStorage.setItem(key, JSON.stringify(value))
+}
+const getLocalStorage = (key: string) => {
+    return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key) as string) : {}
+}
+const piniaPlugin = (option:Options) => {
+    return (context: PiniaPluginContext) => {
+        const { store } = context
+        const data = getLocalStorage(`${store.$id}-pinia`)   //我还以为要同步更新
+        store.$subscribe(() => {
+            console.log(toRaw(store)); //有多个store的时候，这里是个对象,真奇怪，不是数组？
+
+            setLocalStorage(`${option.key}-${store.$id}-pinia`, toRaw(store.$state))
+        })
+        return {
+            ...data  //不过确实问的好，这个为啥直接返回给了store的$state
+        }
+
+    }
+}
+store.use(piniaPlugin({
+    key: "kfjr的store"
+}))
+
+createApp(App).use(store).mount('#app')
+
+```
+
+
+也有别人写好的插件：
+```sh
+npm install pinia-plugin-persistedstate
+```
