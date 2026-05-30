@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./chunks/framework.BiPDFdIm.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"React/路由/安装.md","filePath":"React/路由/安装.md"}'),c={name:"React/路由/安装.md"};function r(o,s,n,_,p,d){return t(),a("div")}const f=e(c,[["render",r]]);export{m as __pageData,f as default};
