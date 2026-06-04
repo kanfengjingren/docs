@@ -100,5 +100,8 @@ jobs:
 ```
 
 就是一个简单的流程：上传之后，打包，然后推送。先在服务器创建对应的文件夹。然后将整个项目push到git仓库中，gitaction就会开始执行
+![](../../resource/gitaction执行脚本.png)
+![](../../resource/gitaction执行完成.png)
 
+🦐👌
 
