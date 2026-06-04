@@ -25,7 +25,7 @@ jobs:
 
       # 关键：构建 VitePress 站点，必须确保 package.json 中的 docs:build 命令指向 src 目录。打包
       - name: Build VitePress site
-        run: npm run docs:build
+        run: rmdir /s /q docs && vitepress build
 
       # 将构建好的 docs 目录同步到你的服务器
       - name: Deploy to Server
@@ -33,7 +33,7 @@ jobs:
         with:
           switches: -avzr --delete
           path: docs/                 # 你的 outDir 是 docs，且位于根目录
-          remote_path: /opt/1panel/www/sites/gaomian.org/index/
+          remote_path: "/home/usr/docs"
           remote_host: ${{ secrets.HOST }}
           remote_user: ${{ secrets.USER }}
           remote_key: ${{ secrets.BLOG }}
