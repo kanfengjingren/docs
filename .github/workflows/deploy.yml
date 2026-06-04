@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 关键：构建 VitePress 站点，必须确保 package.json 中的 docs:build 命令指向 src 目录。打包
+      # 打包
       - name: Build VitePress site
         run: npm run build
 
@@ -32,8 +32,8 @@ jobs:
         uses: burnett01/rsync-deployments@6.0.0
         with:
           switches: -avzr --delete
-          path: docs/                 # 你的 outDir 是 docs，且位于根目录
-          remote_path: "/home/usr/docs"
+          path: docs/                 # 上传到git上的 outDir 是 docs，且位于根目录
+          remote_path: "/home/usr/docs"  #服务器上的位置
           remote_host: ${{ secrets.HOST }}
           remote_user: ${{ secrets.USER }}
           remote_key: ${{ secrets.BLOG }}
