@@ -47,6 +47,7 @@ export default defineConfig({
         text: '前端工程化',
         items: [
           { text: 'webpack', link: '/前端工程化/webpack' },
+          { text: 'CICD自动化部署', link: '/前端工程化/CICD自动化部署' },
 
         ]
       },
