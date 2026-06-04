@@ -25,7 +25,7 @@ jobs:
 
       # 关键：构建 VitePress 站点，必须确保 package.json 中的 docs:build 命令指向 src 目录。打包
       - name: Build VitePress site
-        run: rmdir /s /q docs && vitepress build
+        run: npm run build
 
       # 将构建好的 docs 目录同步到你的服务器
       - name: Deploy to Server
