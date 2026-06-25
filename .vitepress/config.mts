@@ -98,6 +98,11 @@ export default defineConfig({
         items: [
           { text: 'langchain入门', link: '/langchain/langchain入门' }
         ]
+      }, {
+        text: '今天干了什么？',
+        items: [
+          { text: '2026-6-25', link: '/今天干了什么？/2026-6-25' }
+        ]
       }
     ],
 
