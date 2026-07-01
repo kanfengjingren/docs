@@ -49,6 +49,8 @@ export default defineConfig({
           { text: 'webpack', link: '/前端工程化/webpack' },
           { text: 'CICD自动化部署', link: '/前端工程化/CICD自动化部署' },
           { text: 'vite打包一个工具库', link: '/前端工程化/vite打包一个工具库' },
+          { text: '监控前端的报错和上报', link: '/前端工程化/监控前端的报错和上报' },
+          
 
         ]
       },
